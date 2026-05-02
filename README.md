@@ -20,7 +20,7 @@ This is a solution to the [Tip calculator app challenge on Frontend Mentor](http
 
 ### Links
 
- Live Site URL: [Vercel](https://frontend-timetracking-dashboard.vercel.app/)
+ Live Site URL: [Vercel](https://frontend-tip-calculator-five.vercel.app/)
 
 ## My process
 
