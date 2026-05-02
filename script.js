@@ -1,18 +1,26 @@
 const billInput = document.querySelector(".calculator__input__bill input");
 const peopleInput = document.querySelector(".calculator__input__people input");
-const tipButtons = document.querySelectorAll(".calculator__input__tip__buttons button");
-const customTipInput = document.querySelector(".calculator__input__tip__buttons input");
+const tipButtons = document.querySelectorAll(
+  ".calculator__input__tip__buttons button",
+);
+const customTipInput = document.querySelector(
+  ".calculator__input__tip__buttons input",
+);
 const resetButton = document.querySelector(".calculator__output__reset");
 
 const tipAmountOutput = document.querySelector(
-  ".calculator__output__tip .calculator__output__amount"
+  ".calculator__output__tip .calculator__output__amount",
 );
 const totalAmountOutput = document.querySelector(
-  ".calculator__output__total .calculator__output__amount"
+  ".calculator__output__total .calculator__output__amount",
 );
 
-const errorMessageBill = document.querySelector(".calculator__input__error__bill");
-const errorMessagePeople = document.querySelector(".calculator__input__error__people");
+const errorMessageBill = document.querySelector(
+  ".calculator__input__error__bill",
+);
+const errorMessagePeople = document.querySelector(
+  ".calculator__input__error__people",
+);
 
 let currentTipPercentage = 0;
 
@@ -27,6 +35,8 @@ function getValues() {
 function setError(input, errorElement, hasError) {
   input.classList.toggle("invalid", hasError);
   errorElement.textContent = hasError ? "Can't be zero" : "";
+
+  input.toggleAttribute("aria-invalid", hasError);
 }
 
 function validate({ bill, people, tip }) {
@@ -51,7 +61,10 @@ function updateCalculator() {
   const values = getValues();
 
   resetButton.disabled =
-    !billInput.value && !peopleInput.value && !customTipInput.value && values.tip === 0;
+    !billInput.value &&
+    !peopleInput.value &&
+    !customTipInput.value &&
+    values.tip === 0;
 
   if (!validate(values)) {
     tipAmountOutput.textContent = "$0.00";
@@ -91,6 +104,8 @@ resetButton.addEventListener("click", () => {
   currentTipPercentage = 0;
 
   tipButtons.forEach((btn) => btn.classList.remove("active"));
+  billInput.removeAttribute("aria-invalid");
+  peopleInput.removeAttribute("aria-invalid");
 
   setError(billInput, errorMessageBill, false);
   setError(peopleInput, errorMessagePeople, false);

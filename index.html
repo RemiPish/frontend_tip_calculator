@@ -32,14 +32,15 @@
       <article class="calculator__input">
         <section class="calculator__input__bill">
           <div class="calculator__input__header__bill">
-            <p class="calculator__input__header">Bill</p>
-            <p class="calculator__input__error__bill"></p>
+            <label for="bill" class="calculator__input__header">Bill</label>
+            <p id="bill-error" class="calculator__input__error__bill" aria-live="polite"></p>
           </div>
           <input
             type="number"
             class="calculator__input__bill"
             placeholder="0"
             min="0"
+            aria-describedby="bill-error"
           />
         </section>
         <section class="calculator__input__tip">
@@ -60,14 +61,17 @@
         </section>
         <section class="calculator__input__people">
           <div class="calculator__input__header__people">
-            <p class="calculator__input__header">Number of People</p>
-            <p class="calculator__input__error__people"></p>
+            <label for="people" class="calculator__input__header">
+              Number of People
+            </label>
+            <p id="people-error" class="calculator__input__error__people" aria-live="polite"></p>
           </div>
           <input
             type="number"
             class="calculator__input__people"
             placeholder="0"
             min="0"
+            aria-describedby="people-error"
           />
         </section>
       </article>
