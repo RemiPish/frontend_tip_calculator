@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Tip calculator app</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="script.js"></script>
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <img src="./images/logo.svg" alt="Tip Calculator Logo" />
+      </div>
+    </header>
+    <main>
+      <article class="calculator__input">
+        <section class="calculator__input__bill">
+          <div class="calculator__input__header__bill">
+            <p class="calculator__input__header">Bill</p>
+            <p class="calculator__input__error__bill"></p>
+          </div>
+          <input
+            type="number"
+            class="calculator__input__bill"
+            placeholder="0"
+            min="0"
+          />
+        </section>
+        <section class="calculator__input__tip">
+          <h1 class="calculator__input__header">Select Tip %</h1>
+          <div class="calculator__input__tip__buttons">
+            <button class="calculator__input__tip__button">5%</button>
+            <button class="calculator__input__tip__button">10%</button>
+            <button class="calculator__input__tip__button">15%</button>
+            <button class="calculator__input__tip__button">25%</button>
+            <button class="calculator__input__tip__button">50%</button>
+            <input
+              type="number"
+              class="calculator__input__tip__custom"
+              placeholder="Custom"
+              min="0"
+            />
+          </div>
+        </section>
+        <section class="calculator__input__people">
+          <div class="calculator__input__header__people">
+            <p class="calculator__input__header">Number of People</p>
+            <p class="calculator__input__error__people"></p>
+          </div>
+          <input
+            type="number"
+            class="calculator__input__people"
+            placeholder="0"
+            min="0"
+          />
+        </section>
+      </article>
+      <article class="calculator__output">
+        <section class="calculator__output__tip">
+          <div class="calculator__output__header">
+            Tip Amount
+            <p>/ person</p>
+          </div>
+          <p class="calculator__output__amount">$0.00</p>
+        </section>
+        <section class="calculator__output__total">
+          <div class="calculator__output__header">
+            Total
+            <p>/ person</p>
+          </div>
+          <p class="calculator__output__amount">$0.00</p>
+        </section>
+        <button class="calculator__output__reset" disabled>Reset</button>
+      </article>
+    </main>
+    <footer>
+      <p class="attribution">
+        Challenge by
+        <a
+          href="https://www.frontendmentor.io?ref=challenge"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Frontend Mentor</a
+        >. Coded by
+        <a
+          href="https://github.com/RemiPish"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Rémi P</a
+        >.
+      </p>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,291 @@
+$footer-a-focus-color: #005fcc;
+$color-attribution: hsl(228, 45%, 44%);
+
+$green-750: #0D686D;
+$green-800: #085c61;
+$green-900: #00474b;
+$green-200: #9fe8df;
+$green-400: #25c2ae;
+$orange-400: #e17052;
+$grey-50: #f3f9fa;
+$grey-200: #c5e4e7;
+$grey-300: #9ebbbd;
+$grey-400: #7f9d9f;
+$grey-500: #5e7a7d;
+$grey-550: #547878;
+$grey-600: #3d6666;
+
+$white: #ffffff;
+$black: #000000;
+
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-bold: 700;
+
+$font-size-input: 24px;
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+h1,
+h2,
+p {
+    margin: 0;
+}
+
+input {
+    cursor: pointer;
+}
+
+input:focus-visible {
+    outline: 3px solid $green-400;
+    outline-offset: 2px;
+}
+
+.calculator__input__people .invalid,
+.calculator__input__bill .invalid {
+    outline: 3px solid $orange-400;
+    outline-offset: 2px;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    background-color: $green-200;
+    font-family: 'Space Mono', monospace;
+}
+
+.active {
+    background-color: $green-400 !important;
+    color: $green-900 !important;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+
+    .logo {
+        padding: 2rem;
+    }
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: $white;
+    border-radius: 1.5rem;
+    padding: 1.5em;
+}
+
+.calculator__input__header__people,
+.calculator__input__header__bill {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+
+    .calculator__input__error__people,
+    .calculator__input__error__bill {
+        color: $orange-400;
+        font-weight: $font-weight-bold;
+    }
+}
+
+.calculator {
+    &__input {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+
+        &__header {
+            color: $grey-500;
+            font-weight: $font-weight-bold;
+            font-size: 1rem;
+
+        }
+
+        input {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            padding-left: 2.5rem;
+            text-align: right;
+            border: none;
+            border-radius: 5px;
+            background-color: $grey-50;
+            font-size: $font-size-input;
+            font-family: inherit;
+            color: $green-900;
+            font-weight: $font-weight-bold;
+        }
+
+        &__bill input {
+            background-image: url("./images/icon-dollar.svg");
+            background-repeat: no-repeat;
+            background-position: left 0.75rem center;
+        }
+
+        &__people {
+            input {
+                background-image: url("./images/icon-person.svg");
+                background-repeat: no-repeat;
+                background-position: left 0.75rem center;
+            }
+
+            input:invalid {
+                color: $orange-400;
+            }
+        }
+
+        &__tip__buttons {
+            display: flex;
+            flex-direction: row;
+            gap: 1rem;
+            flex-wrap: wrap;
+
+            button {
+                flex: 1 1 40%;
+                padding: 0.75rem;
+                border: none;
+                border-radius: 0.2rem;
+                background-color: $green-750;
+                color: $white;
+                font-size: 1.2rem;
+                font-weight: $font-weight-bold;
+                cursor: pointer;
+            }
+
+            input {
+                flex: 1 1 40%;
+                padding: 0.75rem;
+                border: none;
+                border-radius: 0.2rem;
+                background-color: $grey-50;
+                font-size: 1.2rem;
+                font-weight: $font-weight-bold;
+                text-align: center;
+            }
+
+            button:focus-visible {
+                background-color: $green-400;
+                color: $green-900;
+            }
+
+            button:hover:not(:focus-visible) {
+                background-color: $green-200;
+                color: $green-900;
+            }
+
+
+        }
+    }
+
+    &__output {
+        margin: 2rem 0;
+        background-color: $green-900;
+        border-radius: 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 1.5rem;
+        gap: 1.5rem;
+
+        &__header {
+            color: $white;
+            font-weight: $font-weight-bold;
+
+            p {
+                color: $grey-400;
+            }
+        }
+
+        &__tip,
+        &__total {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        &__reset {
+            width: 100%;
+            padding: 0.75rem;
+            border: none;
+            border-radius: 0.2rem;
+            background-color: $green-400;
+            color: $green-900;
+            text-transform: uppercase;
+            font-size: 1.2rem;
+            font-weight: $font-weight-bold;
+            cursor: pointer;
+        }
+
+        &__reset:disabled {
+            background-color: $green-750;
+            color: $green-800;
+            cursor: not-allowed;
+        }
+
+        &__reset:hover:not(:disabled) {
+            background-color: $green-200;
+            color: $green-900;
+        }
+
+        &__reset:focus-visible:not(:disabled) {
+            background-color: $green-200;
+            color: $green-900;
+        }
+
+        &__amount {
+            color: $green-400;
+            font-size: 2rem;
+            font-weight: $font-weight-bold;
+        }
+    }
+}
+
+footer {
+    padding: 1rem;
+    color: $white;
+
+    .attribution {
+        font-size: 0.75rem;
+        text-align: center;
+    }
+
+    .attribution a {
+        color: $color-attribution;
+    }
+
+    a:focus-visible {
+        outline: 3px solid $footer-a-focus-color;
+        outline-offset: 2px;
+    }
+}
+
+@media (min-width: 900px) {
+    main {
+        flex-direction: row;
+        gap: 3rem;
+        padding: 2rem;
+        align-self: center;
+        width: fit-content;
+    }
+
+    .calculator__input {
+        &__tip__buttons {
+            button {
+                flex: 1 1 25%;
+            }
+
+            input {
+                flex: 1 1 25%;
+            }
+        }
+    }
+}
